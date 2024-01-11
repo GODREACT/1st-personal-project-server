@@ -1,0 +1,27 @@
+const Sequelize = require('sequelize');
+
+const User = require('./user/index');
+const Html = require('./html');
+// const Image = require('./image');
+const db = {};
+
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/config')[env];
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
+
+db.sequelize = sequelize;
+
+// 유저 관련
+db.User = User;
+//
+db.Html =Html;
+
+
+User.initiate(sequelize);//DB를 추가할꺼면 무조건 있어야함
+Html.initiate(sequelize);
+
+// User.associate(db); //FK
+
+
+module.exports = db;

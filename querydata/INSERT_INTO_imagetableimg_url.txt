@@ -1,0 +1,8 @@
+INSERT INTO `imagetable`(`img_url`, `where_page`) VALUES
+('http://localhost:3001/images/main/main_img1.png', 'main'),
+('http://localhost:3001/images/main/main_img2.jpg', 'main'),
+('http://localhost:3001/images/main/main_img3.jpg', 'main'),
+('http://localhost:3001/images/main/main_img4.jpg', 'main'),
+('http://localhost:3001/images/main/main_img5.jpg', 'main'),
+('http://localhost:3001/images/main/main_img6.png', 'main'),
+('http://localhost:3001/images/main/main_img7.png', 'main');

@@ -1,0 +1,25 @@
+all 전체
+purchase 구매
+refund 환불
+use 사용
+group 단체
+guitar 기타
+
+div에 onclick 이벤트 달고 map으로 풀면될듯
+INSERT INTO `imagetable`(`img_url`, `where_page`) VALUES
+	      테이블명 (컬럼,컬럼)
+('http://localhost:3001/images/main/main_img7.png', 'main');
+경로/폴더/폴더이름/이미지이름, 분류
+
+내 DB 테이블
+event / eventtable = 이벤트
+noitce / noitectable = 공지사항
+qna / qnatable = QnA
+social / soicaltable = 사회공헌
+
+activity 메이트 희망기금
+campus 캠퍼스 희망기금
+hygiene 식수위생 캠페인
+aoccmpany 이디야의 동행
+oatheractivities 기타 활동
+
