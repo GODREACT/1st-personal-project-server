@@ -1,0 +1,26 @@
+INSERT INTO `fourth-project`.eventtable  (title,body,start,end,img_url) VALUES
+	 ('페이코 포인트 결제 시 15% 적립 | 최대 1천원 적립 |', 
+	'http://localhost:3001/images/eventimg/IMG_202311301313295.png',
+	'2023-12-01',
+	'2023-12-31',
+	'http://localhost:3001/images/eventimg/eventbodyimg/IMG_1701317623429.jpg');
+
+INSERT INTO `fourth-project`.qnatable (question,answer,category,createdAt,updatedAt) VALUES
+	 ('현금으로 이디야 기프트카드 구매 할 수 있나요?','이디야 기프트카드는 카드결제로만 구매가 가능합니다.※ 카드결제: 신용카드, 체크카드, 법인카드 (기프트카드 제외)','구매','2023-12-15 15:28:26','2023-12-15 15:28:26'),
+	 ('매장에서 이디야 기프트카드 환불이 가능한가요?','이디야 기프트카드 잔액에 대한 환불은 ''페이즈'' 고객센터를 통해 진행가능합니다.자세한 내용은 [기프트카드]-[분실신고/환불신청]-[환불신청]에서 확인 해주세요.페이즈 고객센터: 1644-5368 ','구매','2023-12-15 15:28:26','2023-12-15 15:28:26'),
+	 ('이디야 기프트카드 사용이 안되는 매장도 있나요?','일부 특수매장에서는 기프트카드 사용이 불가합니다.자세한 내용은  [기프트카드]-[기프트카드 소개]-[기프트카드 미판매/ 미사용 매장]에서 확인 가능합니다.','사용','2023-12-15 15:28:26','2023-12-15 15:28:26'),
+	 ('대량으로 이디야 기프트카드를 구매하고 싶은데 어떻게 해야하나요?','기프트카드 대량 구매의 경우 아래 절차대로 진행하시면 됩니다.[기프트카드]-[기프트카드 소개]-[이디야 기프트카드 단체 및 기업 구매 방법]-[발주서 다운로드]으로 메일을 주시면 확인 전화를 통해 최종 확인 후 발주가 진행 됩니다기프트카드 고객 문의 : 02-728-1800','단체 및 기업구매','2023-12-15 15:28:26','2023-12-15 15:28:26'),
+	 ('이디야 기프트카드를 분실 하거나 도난 당했을땐 어떻게 하나요?','이디야 기프트카드의 분실/ 도난은 페이즈 고객센터에 문의 부탁드립니다.페이즈 고객센터: 1644-5368 ','기타','2023-12-15 15:28:26','2023-12-15 15:28:26');
+
+
+INSERT INTO `imagetable`(`img_url`, `where_page`) VALUES
+('http://localhost:3001/images/main/main_img1.png', 'main'),
+('http://localhost:3001/images/main/main_img2.jpg', 'main'),
+('http://localhost:3001/images/main/main_img3.jpg', 'main'),
+('http://localhost:3001/images/main/main_img4.jpg', 'main'),
+('http://localhost:3001/images/main/main_img5.jpg', 'main'),
+('http://localhost:3001/images/main/main_img6.png', 'main'),
+('http://localhost:3001/images/main/main_img7.png', 'main');
+
+INSERT INTO `fourth-project`.eventtable (title,body,`start`,`end`,img_url) VALUES
+	 ('페이코 포인트 결제 시 15% 적립 | 최대 1천원 적립 |','http://localhost:3001/images/eventimg/IMG_202311301313295.png','2023-12-01 00:00:00','2023-12-31 00:00:00','http://localhost:3001/images/eventimg/eventbodyimg/IMG_1701317623429.jpg');

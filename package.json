@@ -1,0 +1,38 @@
+{
+  "name": "first-project",
+  "version": "0.0.1",
+  "description": "1차 개인 포트폴리오",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "LeeDongMyung",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.4.3",
+    "express-session": "^1.17.3",
+    "model": "^6.0.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "nunjucks": "^3.2.3",
+    "passport": "^0.7.0",
+    "passport-kakao": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "react-model": "^4.3.1",
+    "react-slick": "^0.29.0",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.4.1",
+    "session": "^0.1.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/multer": "^1.4.11",
+    "nodemon": "^2.0.22"
+  }
+}
