@@ -1,9 +1,9 @@
-// html.js 제목,내용,작성자,작성날짜,이미지,조회수
+// Htmlreview.js 제목,내용,작성자,작성날짜
 const Sequelize = require('sequelize');
 
-class Html extends Sequelize.Model{
+class Htmlreview extends Sequelize.Model{
   static initiate(sequelize) {
-    Html.init({
+    Htmlreview.init({
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -26,23 +26,14 @@ class Html extends Sequelize.Model{
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("NOW"), 
       },
-      img_url: {
-        type: Sequelize.STRING,
-        allowNull: true 
-      },
-      views: {
-        type:Sequelize.DataTypes.INTEGER(10),
-        allowNull: false,
-        defaultValue : 0
-      },
     },
       
     {
       sequelize,
       timestamps: true,
       underscored: false,
-      modelName: 'Html',
-      tableName: 'HtmlTable',
+      modelName: 'Htmlreview',
+      tableName: 'HtmlreviewTable',
       paranoid: false,
       charset: 'utf8',
       collate: 'utf8_general_ci',
@@ -50,4 +41,4 @@ class Html extends Sequelize.Model{
   }
 };
 
-module.exports = Html;
+module.exports = Htmlreview;
