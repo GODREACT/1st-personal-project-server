@@ -26,6 +26,10 @@ class Html extends Sequelize.Model{
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("NOW"), 
       },
+      img_url: {
+        type: Sequelize.STRING,
+        allowNull: true 
+      },
     },
     {
       sequelize,
