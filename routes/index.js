@@ -13,22 +13,8 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// router.use('/imges', express.static( 'imges'));
+router.use('/images', express.static( 'images')); // 접근 권한
 
-
-// router.get('/mainimage', (req, res) => {
-//   models.Image.findAll({
-//     where: {
-//       where_page: 'main'
-//     }
-//   })
-//   .then(result => {
-//     res.send(result);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   })
-// });
 
 router.post('/login', async (req, res) => {
   try {
