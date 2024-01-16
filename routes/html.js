@@ -93,5 +93,51 @@ router.patch('/update/:id', async(req, res) => {
     console.log(err);
   }
 })
+// 조회수
+router.patch('/increase-views/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // 쿠키에서 조회수 체크용 쿠키를 가져옵니다.
+    const viewedCookie = req.cookies['htmlViewed_' + id];
+    console.log(viewedCookie);
+
+    // 만약 쿠키가 없다면 조회수를 증가시키고 쿠키를 설정합니다.
+    if (!viewedCookie) {
+      // 데이터베이스에서 해당 id의 데이터를 찾습니다.
+      const htmlData = await models.Html.findByPk(id);
+      if (!htmlData) {
+        return res.status(404).json({ message: '게시물을 찾을 수 없습니다.' });
+      }
+
+      // 조회수를 1 증가시킵니다.
+      htmlData.views += 1;
+
+      // 변경된 조회수를 저장합니다.
+      await htmlData.save();
+
+      const expires = new Date();
+      expires.setDate(expires.getDate() + 1);
+
+      res.cookie('htmlViewd_' + id, '1', {
+        expires: expires
+      })
+
+      // 쿠키를 설정하여 중복 조회를 방지합니다.
+      // res.setHeader('Set-Cookie', `htmlViewed_${id}=true; Max-Age=${24 * 60 * 60}; Path=/`);
+      // res.json({ message: '조회수가 증가되었습니다.' });
+      console.log('실행됨');
+      res.sendStatus(202)
+    } else {
+      // 이미 조회한 경우에는 중복 조회로 간주합니다.
+      res.json({ message: '이미 조회한 게시물입니다.' });
+    }
+  } catch (error) {
+    console.error('Error increasing views:', error);
+    res.status(500).json({ message: '서버 오류' });
+  }
+});
+
+// 여기까지가 조회수
 
 module.exports = router;
