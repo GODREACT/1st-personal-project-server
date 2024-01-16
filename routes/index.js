@@ -57,28 +57,72 @@ router.post('/signup', async(req, res) => {
     console.log(err);
   }
 })
-
-//여러개 검색
+// 하나 검색
 router.get('/search/:keyword', async (req, res) => {
   try {
     const params = req.params;
-    const keyword = params.keyword;
-
-    // html 모델에서 검색
-    const htmlItems = await Menu.findAll({
+    console.log(params);
+    console.log('---------------------')
+    console.log(params.keyword);
+    const htmlitems = await models.Html.findAll({
       where: {
-        name: {
-          [Op.like]: `%${keyword}%` // 검색한 단어가 들어가 있는 name 필드를 검색
+        title: {
+          [Op.like]: `%${params.keyword}%`
         }
-      }
+      },
     });
 
+    res.json({ 'htmlItems': htmlitems }); // 'htmlitems' 대신 'htmlItems'로 수정
 
-    res.json({ 'htmlItems': htmlItems,  }); 
   } catch (error) {
     console.error('Error fetching items:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+// router.get('/search/:keyword', async (req, res) => {
+//   try {
+//     const params = req.params;
+//     console.log(params);
+//     console.log('---------------------')
+//     console.log(params.keyword);
+//     const htmlitems = await models.Html.findAll({
+//       where:{
+//         title:{
+//           [Op.like]: `%${params.keyword}%` 
+//           // 검색한 단어가 들어가 있는
+//         }
+//       },
+//      });
+//      res.json({ 'htmlitems': htmlitems,}); 
+
+//   } catch (error) {
+//     console.error('Error fetching items:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
+//여러개 검색
+// router.get('/search/:keyword', async (req, res) => {
+//   try {
+//     const params = req.params;
+//     // console.log(params);
+//     const keyword = params.keyword;
+//     // console.log(keyword);
+
+//     // html 모델에서 검색
+//     const htmlItems = await models.Html.findAll({
+//       where: {
+//         title: {
+//           [Op.like]: `%${keyword}%` // 검색한 단어가 들어가 있는 name 필드를 검색
+//         }
+//       }
+//     });
+
+//     console.log(htmlItems);
+//     // res.json({ 'htmlItems': htmlItems,  }); 
+//   } catch (error) {
+//     console.error('Error fetching items:', error);
+//     res.status(500).json({ error: '검색서버에 문제 생김' });
+//   }
+// });
 
 module.exports = router;
