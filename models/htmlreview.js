@@ -1,4 +1,4 @@
-// Htmlreview.js 제목,내용,작성자,작성날짜
+// Htmlreview.js 제목,내용,작성자,작성날짜,이미지,조회수
 const Sequelize = require('sequelize');
 
 class Htmlreview extends Sequelize.Model{

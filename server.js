@@ -11,7 +11,8 @@ const cookieParser = require('cookie-parser');
 const indexRouter = require('./routes/index');
 
 const htmlRouter = require('./routes/html.js');
-const htmlreivewRouter = require('./routes/htmlreview.js');
+const htmlreviewRouter = require('./routes/htmlreview.js');
+
 
 require("dotenv").config({ path: "./.env" })
 
@@ -19,6 +20,7 @@ require("dotenv").config({ path: "./.env" })
 const app = express();
 app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'html');
+// app.set('view engine', 'htmlreview');
 // 넌적스 초기화
 nunjucks.configure('views', {
   express: app,
@@ -61,7 +63,7 @@ app.use(session({
 app.use('/', indexRouter);
 
 app.use('/html', htmlRouter);
-app.use('./htmlview', htmlreivewRouter);
+app.use('/htmlreview', htmlreviewRouter);
 
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기 중');
